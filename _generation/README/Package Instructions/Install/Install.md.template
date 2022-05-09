@@ -4,8 +4,8 @@
 choco install %packageId%
 ```
 
-Alternatively, the packages as published on the Chocolatey Community Repository will also be mirrored on this repository's [Releases page](https://github.com/brogers5/chocolatey-package-%packageId%/releases). The install command can also target the distributed `nupkg` file:
+Alternatively, the packages as published on the Chocolatey Community Repository will also be mirrored on this repository's [Releases page](https://github.com/brogers5/chocolatey-package-%packageId%/releases). The `nupkg` can be installed from the current directory as follows:
 
 ```shell
-choco install %packageId%.%firstVersion%.nupkg
+choco install %packageId% -s .
 ```
