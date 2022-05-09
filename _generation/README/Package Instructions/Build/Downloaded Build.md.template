@@ -1,0 +1,9 @@
+## Build
+[Install Chocolatey](https://chocolatey.org/install), clone this repository, and run the following command in the cloned repository:
+```shell
+choco pack
+```
+
+A successful build will create `%packageId%.%versionTemplate%.nupkg`, where `%versionTemplate%` should be the Nuspec's `version` value at build time.
+
+Note that Chocolatey package builds are non-deterministic. Consequently, an independently built package will fail a checksum validation against officially published packages.

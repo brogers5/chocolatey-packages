@@ -1,0 +1,11 @@
+
+---
+
+This package is part of a family of packages published for %packageTitle%. This repository is for the %packageType% package.
+* For the virtual package, see [chocolatey-package-%packageId%](https://github.com/brogers5/chocolatey-package-%packageId%).
+* For the installer package, see [chocolatey-package-%packageId%.install](https://github.com/brogers5/chocolatey-package-%packageId%.install).
+* For the portable package, see [chocolatey-package-%packageId%.portable](https://github.com/brogers5/chocolatey-package-%packageId%.portable).
+
+See the [Chocolatey FAQs](https://docs.chocolatey.org/en-us/faqs) for more information on [virtual packages](https://docs.chocolatey.org/en-us/faqs#what-is-the-difference-between-packages-no-suffix-as-compared-to.install.portable) and [installer/portable packages](https://docs.chocolatey.org/en-us/faqs#what-distinction-does-chocolatey-make-between-an-installable-and-a-portable-application).
+
+---

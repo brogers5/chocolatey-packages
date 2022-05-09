@@ -1,0 +1,8 @@
+## Build
+[Install Chocolatey](https://chocolatey.org/install) and the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au), then clone this repository.
+
+Once cloned, simply run `build.ps1`. The script will download the %packageTitle% %packageType% binary from the official distribution point (as the binary is intentionally untracked to avoid bloating the repository), then packs everything together.
+
+A successful build will create `%packageId%.%versionTemplate%.nupkg`, where `%versionTemplate%` should be the Nuspec's `version` value at build time.
+
+Note that Chocolatey package builds are non-deterministic. Consequently, an independently built package will fail a checksum validation against officially published packages.
