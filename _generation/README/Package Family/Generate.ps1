@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)] [string] $PackageID,
-    [Parameter(Mandatory = $true)] [string] $PackageTitle,
+    [Parameter(Mandatory = $true)] [string] $BasePackageID,
+    [Parameter(Mandatory = $true)] [string] $BasePackageTitle,
     [Parameter(Mandatory = $true)] [ValidateSet('virtual', 'installer', 'portable')] [string] $PackageType
 )
 
@@ -10,8 +10,8 @@ $filePath = ".\PackageFamily.MD"
 Copy-Item -Path $templateFilePath -Destination $filePath -Force
 
 $tokenList = @{
-    packageId = $PackageID
-    packageTitle = $PackageTitle
+    packageId = $BasePackageID
+    packageTitle = $BasePackageTitle
     packageType = $PackageType
 }
 
