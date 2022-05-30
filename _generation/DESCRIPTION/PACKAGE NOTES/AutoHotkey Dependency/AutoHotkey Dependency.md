@@ -1,0 +1,1 @@
+The installer does not support a silent installation option. This package depends on [AutoHotkey](https://community.chocolatey.org/packages/autohotkey) to implement a best-effort workaround of scripting an unattended installation via GUI automation. GUI automation is not 100% reliable, and may occasionally fail to honor package parameters or require manual input to complete.
