@@ -4,7 +4,4 @@ The installer executed by this package was built using Inno Setup. For advanced 
 
 Installer-specific details (e.g. Setup configuration and supported Languages, Components, and Tasks) can be found in the Inno Setup Script file, which has been extracted using [Inno Setup Unpacker](https://community.chocolatey.org/packages/innounp) and %link%
 
-For future upgrade operations, consider opting into Chocolatey's `useRememberedArgumentsForUpgrades` feature to avoid having to pass the same arguments with each upgrade:
-```
-choco feature enable -n=useRememberedArgumentsForUpgrades
-```
+%rememberArguments%

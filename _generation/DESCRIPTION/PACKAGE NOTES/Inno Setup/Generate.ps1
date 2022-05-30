@@ -22,10 +22,12 @@ else
 }
 
 $contents = $contents -replace '%link%', $link
+$rememberArguments = Get-Content -Path "..\Remember Arguments\Remember Arguments.md" -Raw
 
 $tokenList = @{
     version = $Version
     packageId = $PackageID
+    rememberArguments = $rememberArguments
 }
 
 foreach ($token in $tokenList.GetEnumerator())
