@@ -1,7 +1,18 @@
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)] [string] $PackageID
+    [Parameter(Mandatory = $true)] [string] $PackageID,
+    [Parameter()] [switch] $DifferentEnvironment
 )
+
+if ($DifferentEnvironment.IsPresent)
+{
+    $environmentType = Read-Host -Prompt "Please define the environment (example: `"64-bit Windows 10+`")"
+    $environmentType = "with a $environmentType environment similar to the"
+}
+else 
+{
+    $environmentType = "using the"
+}
 
 $templateFilePath = ".\Update.md.template"
 
@@ -12,6 +23,7 @@ $contents = Get-Content -Path $filePath -Raw
 $tokenList = @{
     packageId = $PackageID
     firstVersion = $FirstVersion
+    environmentType = $environmentType
 }
 
 foreach ($token in $tokenList.GetEnumerator())
