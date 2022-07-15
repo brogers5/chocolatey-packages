@@ -1,3 +1,3 @@
 # <img src="https://cdn.jsdelivr.net/gh/brogers5/chocolatey-package-%packageId%@%commitHash%/%packageId%.png" width="48" height="48"/> Chocolatey Package: [%packageTitle%](https://community.chocolatey.org/packages/%packageId%/)
-[![Chocolatey package version](https://img.shields.io/chocolatey/v/%packageId%.svg)](https://community.chocolatey.org/packages/%packageId%/)
-[![Chocolatey package download count](https://img.shields.io/chocolatey/dt/%packageId%.svg)](https://community.chocolatey.org/packages/%packageId%/)
+[![Chocolatey package version](https://img.shields.io/chocolatey/v/%packageId%.svg)](https://community.chocolatey.org/packages/%packageId%)
+[![Chocolatey package download count](https://img.shields.io/chocolatey/dt/%packageId%.svg)](https://community.chocolatey.org/packages/%packageId%)
