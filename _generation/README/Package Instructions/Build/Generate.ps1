@@ -3,6 +3,7 @@ param(
     [Parameter(Mandatory = $true)] [string] $PackageID,
     [Parameter(Mandatory = $true)] [string] $PackageTitle,
     [Parameter(Mandatory = $true)] [ValidateSet("virtual", "installer", "portable")] [string] $PackageType,
+    [Parameter(Mandatory = $true)] [ValidateSet("binary", "MSI", "ZIP archive")] [string] $DistributionType,
     [Parameter(Mandatory = $true)] [string] $ExampleVersion,
     [Parameter()] [switch] $Redistributed
 )
@@ -38,6 +39,7 @@ $tokenList = @{
     packageTitle = $PackageTitle
     packageType = $PackageType
     versionTemplate = $versionTemplate
+    distributionType = $DistributionType
 }
 
 foreach ($token in $tokenList.GetEnumerator())
