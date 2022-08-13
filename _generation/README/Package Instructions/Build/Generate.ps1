@@ -5,7 +5,8 @@ param(
     [Parameter(Mandatory = $true)] [ValidateSet("virtual", "installer", "portable")] [string] $PackageType,
     [Parameter(Mandatory = $true)] [ValidateSet("binary", "MSI", "ZIP archive")] [string] $DistributionType,
     [Parameter(Mandatory = $true)] [string] $ExampleVersion,
-    [Parameter()] [switch] $Redistributed
+    [Parameter()] [switch] $Redistributed,
+    [Parameter()] [switch] $Mirrored
 )
 
 if ($Redistributed.IsPresent)
@@ -34,12 +35,22 @@ elseif ($ExampleVersion.Split('.').Count -eq 4)
     $versionTemplate = "w.x.y.z"
 }
 
+if ($Mirrored)
+{
+    $downloadLocation = "mirror created by this package (to ensure reproducibility in case of an older version)"
+}
+else
+{
+    $downloadLocation = "official distribution point"
+}
+
 $tokenList = @{
     packageId = $PackageID
     packageTitle = $PackageTitle
     packageType = $PackageType
     versionTemplate = $versionTemplate
     distributionType = $DistributionType
+    downloadLocation = $downloadLocation
 }
 
 foreach ($token in $tokenList.GetEnumerator())
