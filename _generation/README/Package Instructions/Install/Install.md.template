@@ -7,5 +7,5 @@ choco install %packageId%
 Alternatively, the packages as published on the Chocolatey Community Repository will also be mirrored on this repository's [Releases page](https://github.com/brogers5/chocolatey-package-%packageId%/releases). The `nupkg` can be installed from %installSource% as follows:
 
 ```shell
-choco install %packageId% -source="'%packageSource%'"
+choco install %packageId% --source="'%packageSource%'"
 ```
