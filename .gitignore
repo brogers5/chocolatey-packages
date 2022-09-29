@@ -8,3 +8,4 @@ api_key
 /_generation/.vscode
 *.md
 *.MD
+/archived
