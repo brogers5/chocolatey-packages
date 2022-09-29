@@ -2,6 +2,7 @@
 ---
 
 This package is part of a family of packages published for %packageTitle%. This repository is for the %packageType% package.
+
 * For the virtual package, see [chocolatey-package-%packageId%](https://github.com/brogers5/chocolatey-package-%packageId%).
 * For the installer package, see [chocolatey-package-%packageId%.install](https://github.com/brogers5/chocolatey-package-%packageId%.install).
 * For the portable package, see [chocolatey-package-%packageId%.portable](https://github.com/brogers5/chocolatey-package-%packageId%.portable).
