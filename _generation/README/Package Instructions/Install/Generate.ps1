@@ -1,13 +1,13 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)] [string] $PackageID,
-    [Parameter(Mandatory = $true)] [string] $FirstVersion,
     [Parameter()] [switch] $Inherited,
     [Parameter()] [switch] $HasDependency
 )
 
 if ($Inherited.IsPresent)
 {
+    $firstVersion = Read-Host -Prompt 'Enter the first version you published (e.g. 1.2.3.4):'
     $templateFilePath = ".\Inherited Install.md.template"
 }
 else
@@ -32,7 +32,7 @@ $contents = Get-Content -Path $filePath -Raw
 
 $tokenList = @{
     packageId = $PackageID
-    firstVersion = $FirstVersion
+    firstVersion = $firstVersion
     packageSource = $packageSource
     installSource = $installSource
 }
