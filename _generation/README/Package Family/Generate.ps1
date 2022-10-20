@@ -2,7 +2,7 @@
 param(
     [Parameter(Mandatory = $true)] [string] $BasePackageID,
     [Parameter(Mandatory = $true)] [string] $BasePackageTitle,
-    [Parameter(Mandatory = $true)] [ValidateSet('virtual', 'installer', 'portable')] [string] $PackageType
+    [Parameter(Mandatory = $true)] [ValidateSet('meta', 'installer', 'portable')] [string] $PackageType
 )
 
 $templateFilePath = ".\PackageFamily.MD.template"
