@@ -2,7 +2,7 @@
 param(
     [Parameter(Mandatory = $true)] [string] $PackageID,
     [Parameter(Mandatory = $true)] [string] $PackageTitle,
-    [Parameter(Mandatory = $true)] [string] $CommitHash
+    [Parameter(Mandatory = $true)] [string] $IconCommitHash
 )
 
 $templateFilePath = ".\Header.MD.template"
@@ -12,7 +12,7 @@ $contents = Get-Content -Path $filePath -Raw
 
 $tokenList = @{
     packageId = $PackageID
-    commitHash = $CommitHash
+    commitHash = $IconCommitHash
     packageTitle = $PackageTitle
 }
 
