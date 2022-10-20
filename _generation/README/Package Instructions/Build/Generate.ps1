@@ -10,7 +10,7 @@ param(
 if ($Redistributed.IsPresent)
 {
     $packageType = Read-Host -Prompt 'Enter the type of software this package consumes (i.e. installer/portable):'
-    $distributionType = Read-Host -Prompt 'Enter the type of package this software is distributed in (i.e. binary.binaries, MSI(s), ZIP archive(s)):'
+    $distributionType = Read-Host -Prompt 'Enter the type of package this software is distributed in (i.e. binary/binaries, MSI(s), ZIP archive(s)):'
     $templateFilePath = ".\Redistributed Build.md.template"
 }
 else
