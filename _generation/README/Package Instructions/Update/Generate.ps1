@@ -6,7 +6,7 @@ param(
 
 if ($DifferentEnvironment.IsPresent)
 {
-    $environmentType = Read-Host -Prompt "Please define the environment (example: `"64-bit Windows 10+`")"
+    $environmentType = Read-Host -Prompt "Please define the environment (e.g. `"64-bit Windows 10 v1903+`")"
     $environmentType = "with a $environmentType environment similar to the"
 }
 else 
