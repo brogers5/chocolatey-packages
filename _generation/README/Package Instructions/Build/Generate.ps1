@@ -2,8 +2,6 @@
 param(
     [Parameter(Mandatory = $true)] [string] $PackageID,
     [Parameter(Mandatory = $true)] [string] $PackageTitle,
-    [Parameter(Mandatory = $true)] [ValidateSet("installer", "portable")] [string] $PackageType,
-    [Parameter(Mandatory = $true)] [ValidateSet("binary", "binaries", "MSI", "MSIs", "ZIP archive", "ZIP archives")] [string] $DistributionType,
     [Parameter(Mandatory = $true)] [string] $ExampleVersion,
     [Parameter()] [switch] $Redistributed,
     [Parameter()] [switch] $Mirrored
@@ -11,6 +9,8 @@ param(
 
 if ($Redistributed.IsPresent)
 {
+    $packageType = Read-Host -Prompt 'Enter the type of software this package consumes (i.e. installer/portable):'
+    $distributionType = Read-Host -Prompt 'Enter the type of package this software is distributed in (i.e. binary.binaries, MSI(s), ZIP archive(s)):'
     $templateFilePath = ".\Redistributed Build.md.template"
 }
 else
@@ -22,7 +22,7 @@ $filePath = ".\Build.md"
 Copy-Item -Path $templateFilePath -Destination $filePath -Force
 $contents = Get-Content -Path $filePath -Raw
 
-if ($DistributionType.EndsWith('s'))
+if ($distributionType.EndsWith('s'))
 {
     $linkingVerb = 'are'
 }
@@ -56,9 +56,9 @@ else
 $tokenList = @{
     packageId = $PackageID
     packageTitle = $PackageTitle
-    packageType = $PackageType
+    packageType = $packageType
     versionTemplate = $versionTemplate
-    distributionType = $DistributionType
+    distributionType = $distributionType
     linkingVerb = $linkingVerb
     downloadLocation = $downloadLocation
 }
