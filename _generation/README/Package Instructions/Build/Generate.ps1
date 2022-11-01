@@ -22,7 +22,7 @@ $filePath = ".\Build.md"
 Copy-Item -Path $templateFilePath -Destination $filePath -Force
 $contents = Get-Content -Path $filePath -Raw
 
-if ($distributionType.EndsWith('s'))
+if ($null -ne $distributionType -and $distributionType.EndsWith('s'))
 {
     $linkingVerb = 'are'
 }
