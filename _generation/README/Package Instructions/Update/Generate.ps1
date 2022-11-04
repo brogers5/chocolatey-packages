@@ -1,22 +1,30 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)] [string] $PackageID,
-    [Parameter()] [switch] $DifferentEnvironment
+    [Parameter()] [switch] $DifferentEnvironment,
+    [Parameter()] [switch] $GitHub
 )
 
-if ($DifferentEnvironment.IsPresent)
+if ($GitHub)
+{
+    $templateFilePath = '.\Update-GitHub.md.template'
+}
+else
+{
+    $templateFilePath = '.\Update.md.template'
+}
+
+if ($DifferentEnvironment)
 {
     $environmentType = Read-Host -Prompt "Please define the environment (e.g. `"64-bit Windows 10 v1903+`")"
     $environmentType = "with a $environmentType environment similar to the"
 }
 else 
 {
-    $environmentType = "using the"
+    $environmentType = 'using the'
 }
 
-$templateFilePath = ".\Update.md.template"
-
-$filePath = ".\Update.md"
+$filePath = '.\Update.md'
 Copy-Item -Path $templateFilePath -Destination $filePath -Force
 $contents = Get-Content -Path $filePath -Raw
 

@@ -4,7 +4,8 @@ param(
     [Parameter(Mandatory = $true)] [string] $PackageTitle,
     [Parameter(Mandatory = $true)] [string] $ExampleVersion,
     [Parameter()] [switch] $Redistributed,
-    [Parameter()] [switch] $Mirrored
+    [Parameter()] [switch] $Mirrored,
+    [Parameter()] [switch] $GitHub
 )
 
 if ($Redistributed.IsPresent)
@@ -12,6 +13,15 @@ if ($Redistributed.IsPresent)
     $packageType = Read-Host -Prompt 'Enter the type of software this package consumes (i.e. installer/portable):'
     $distributionType = Read-Host -Prompt 'Enter the type of package this software is distributed in (i.e. binary/binaries, MSI(s), ZIP archive(s)):'
     $templateFilePath = ".\Redistributed Build.md.template"
+
+    if ($GitHub)
+    {
+        $requiredModules = "the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au), and the [PowerShellForGitHub PowerShell Module](https://github.com/microsoft/PowerShellForGitHub)"
+    }
+    else
+    {
+        $requiredModules = "and the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au)"
+    }
 }
 else
 {
@@ -61,6 +71,7 @@ $tokenList = @{
     distributionType = $distributionType
     linkingVerb = $linkingVerb
     downloadLocation = $downloadLocation
+    requiredModules = $requiredModules
 }
 
 foreach ($token in $tokenList.GetEnumerator())
