@@ -1,0 +1,19 @@
+## Update
+
+This package should be automatically updated by the [Chocolatey Automatic Package Updater Module](https://github.com/majkinetor/au), with update queries implemented by the [PowerShellForGitHub PowerShell Module](https://github.com/microsoft/PowerShellForGitHub). If it is outdated by more than a few days, please [open an issue](https://github.com/brogers5/chocolatey-package-%packageId%/issues).
+
+AU expects the parent directory that contains this repository to share a name with the Nuspec (`%packageId%`). Your local repository should therefore be cloned accordingly:
+
+```shell
+git clone git@github.com:brogers5/chocolatey-package-%packageId%.git %packageId%
+```
+
+Alternatively, a junction point can be created that points to the local repository (preferably within a repository adopting the [AU packages template](https://github.com/majkinetor/au-packages-template)):
+
+```shell
+mklink /J %packageId% ..\chocolatey-package-%packageId%
+```
+
+Once created, simply run `update.ps1` from within the created directory/junction point. Assuming all goes well, all relevant files should change to reflect the latest version available. This will also build a new package version using the modified files.
+
+Before submitting a pull request, please [test the package](https://docs.chocolatey.org/en-us/community-repository/moderation/package-verifier#steps-for-each-package) %environmentType% [Chocolatey Testing Environment](https://github.com/chocolatey-community/chocolatey-test-environment) first.
