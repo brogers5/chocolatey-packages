@@ -1,0 +1,4 @@
+[submodule "foxitreader"]
+    path = foxitreader
+    url = git@github.com:brogers5/chocolatey-package-foxitreader.git
+    branch = main
